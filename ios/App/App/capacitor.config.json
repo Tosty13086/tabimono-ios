@@ -1,0 +1,13 @@
+{
+	"appId": "com.tabimonotecho.app",
+	"appName": "たびもの手帳",
+	"webDir": "www",
+	"ios": {
+		"contentInset": "always",
+		"backgroundColor": "#EAFAF7"
+	},
+	"server": {
+		"androidScheme": "https"
+	},
+	"packageClassList": []
+}
