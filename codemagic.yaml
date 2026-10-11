@@ -25,7 +25,9 @@ workflows:
           npx cap sync ios
       - name: 証明書・プロビジョニングプロファイルを自動取得
         script: |
-          xcode-project use-profiles
+        keychain initialize
+        app-store-connect fetch-signing-files "$BUNDLE_ID" --type IOS_APP_STORE --create
+        xcode-project use-profiles
       - name: TestFlightの最新ビルド番号+1を設定
         script: |
           LATEST_BUILD_NUMBER=$(app-store-connect get-latest-app-store-build-number "$BUNDLE_ID" || echo 0)
